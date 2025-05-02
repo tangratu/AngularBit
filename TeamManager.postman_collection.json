@@ -1,0 +1,514 @@
+{
+	"info": {
+		"_postman_id": "f6241dae-e158-470c-91b5-f3b398d438fe",
+		"name": "TeamManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35165133"
+	},
+	"item": [
+		{
+			"name": "Create role player",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api.V1/utility/role/create?role=player",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"utility",
+						"role",
+						"create"
+					],
+					"query": [
+						{
+							"key": "role",
+							"value": "player"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create player",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fname\":\"Genz\",\r\n    \"lname\":\"G3\",\r\n    \"username\":\"gold\",\r\n    \"password\":\"idk some giberish\",\r\n    \"age\":18,\r\n    \"salary\":2100.54,\r\n    \"teamName\":\"none\",\r\n    \"role\":\"player\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api.V1/players/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"players",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create team",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"team_name\":\"Methane\",\r\n    \"active\":true,\r\n    \"ranking\":3,\r\n    \"base_salary\":1000\r\n    \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api.V1/teams/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"teams",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create team Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"team_name\":\"Buthane\",\r\n    \"active\":true,\r\n    \"ranking\":4,\r\n    \"base_salary\":3000\r\n    \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api.V1/teams/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"teams",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add player to team",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"uname\":\"gold\",\r\n    \"teamName\":\"Buthane\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api.V1/teams/update/addPlayer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"teams",
+						"update",
+						"addPlayer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "return test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api.V1/teams/Buthane",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"teams",
+						"Buthane"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove player",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"player_id\":1,\r\n    \"team_id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api.V1/teams/update/removePlayer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"teams",
+						"update",
+						"removePlayer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all players",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api.V1/players/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"players",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Teams",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api.V1/teams/All",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"teams",
+						"All"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create tournament",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"t_name\":\"The Small One\",\r\n    \"begins\":\"07:05:2025\",\r\n    \"ends\":\"10:05:2025\",\r\n    \"sport\":\"ball\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api.V1/tournaments/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"tournaments",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create sport",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"ball\",\r\n    \"ruleset\":\"play ball\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api.V1/utility/sport/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"utility",
+						"sport",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create role manager",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api.V1/utility/role/create?role=manager",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"utility",
+						"role",
+						"create"
+					],
+					"query": [
+						{
+							"key": "role",
+							"value": "manager"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create manager",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fname\":\"Man\",\r\n    \"lname\":\"Gere\",\r\n    \"username\":\"galinovg\",\r\n    \"password\":\"123\",\r\n    \"age\":18,\r\n    \"salary\":2100.54,\r\n    \"teamName\":\"none\",\r\n    \"role\":\"manager\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api.V1/players/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"players",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get manager",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api.V1/teams/Buthane/manager",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"teams",
+						"Buthane",
+						"manager"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all tournaments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api.V1/tournaments/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"tournaments",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create venue",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Big Sted\",\r\n    \"location\": \"Britain\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api.V1/utility/venue/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"utility",
+						"venue",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create match",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"desig\":\"343b\",\r\n    \"score\":\"0-0\",\r\n    \"start\":\"07:05:2025\",\r\n    \"end\":\"08:05:2025\",\r\n    \"host\":\"Buthane\",\r\n    \"away\": \"Methane\",\r\n    \"tourney\": \"The Small One\",\r\n    \"venue\": \"Big Sted\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api.V1/matches/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"matches",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get info on match",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api.V1/matches/info?desig=343b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api.V1",
+						"matches",
+						"info"
+					],
+					"query": [
+						{
+							"key": "desig",
+							"value": "343b"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
